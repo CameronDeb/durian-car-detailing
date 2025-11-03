@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durian Car Detailing - Professional Auto Detailing in Tucson, AZ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header/Navigation */
+        header {
+            background: rgba(0, 0, 0, 0);
+            color: white;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8b7ff4;
+        }
+
+        .book-btn {
+            background: #8b7ff4;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .book-btn:hover {
+            background: #7a6fe3;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(139, 127, 244, 0.7)), url('hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 10rem 5% 6rem;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .highlight {
+            color: #fff;
+            background: rgba(139, 127, 244, 0.3);
+            padding: 0 10px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1.2s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 5rem 5%;
+            background: #8b7ff4;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #8b7ff4;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-btn {
+            background: #8b7ff4;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+
+        .service-btn:hover {
+            background: #7a6fe3;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 5%;
+            background: #000;
+            color: white;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #8b7ff4;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .equipment-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .equipment-list li {
+            padding: 0.5rem 0;
+            color: #8b7ff4;
+            font-weight: 600;
+        }
+
+        .equipment-list li:before {
+            content: "✓ ";
+            margin-right: 0.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #8b7ff4 0%, #6b5fd4 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .hours {
+            margin-top: 2rem;
+        }
+
+        .hours h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #8b7ff4;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #7a6fe3;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 5% 4rem;
+                min-height: 100vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .services-grid,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services h2,
+            .about h2,
+            .gallery h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">DURIAN CAR DETAILING</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="book-btn">BOOK APPOINTMENT</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>MAKE YOUR CAR <span class="highlight">STAND OUT.</span><br>CHOOSE DURIAN.</h1>
+        <p>Welcome to Durian Car Detailing - your one-stop shop for all your car pampering needs. Our mission is to make your car shine inside out with our variety of packages including polish, wax, interior detailing, exterior detailing, wheel care, tire cleaning, engine bay treatment, and more!</p>
+        <a href="#contact" class="book-btn" style="font-size: 1.2rem; padding: 1rem 2rem;">SCHEDULE YOUR CAR'S SPA DAY!</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>DISCOVER OUR AWESOME SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="service-exterior.jpg" alt="Exterior Detailing Service">
+                <h3>EXTERIOR SERVICE</h3>
+                <p>At Durian Car Detailing, our exterior service pampers your car with meticulous hand washing, getting in every crack and crevice, tire & rim shine, and ceramic wax for lasting paint protection and shine. Trust us for the royal treatment your car deserves.</p>
+                <a href="#contact" class="service-btn">BOOK APPOINTMENT</a>
+            </div>
+            <div class="service-card">
+                <img src="service-interior.jpg" alt="Interior Detailing Service">
+                <h3>INTERIOR SERVICE</h3>
+                <p>At Durian Car Detailing, our interior service brings new life to your vehicle's cabin. The treatment includes a full vacuum, a carpet wash & carpet stain removal, precise steaming, gentle brushing for those hard-to-reach spots, and specialized pet hair removal. Trust us to transform your car's interior into a fresh and inviting space, ready for you to enjoy every ride to the fullest.</p>
+                <a href="#contact" class="service-btn">BOOK APPOINTMENT</a>
+            </div>
+            <div class="service-card">
+                <img src="service-polish.jpg" alt="Polish and Ceramic Coating Service">
+                <h3>POLISH AND CERAMIC COAT</h3>
+                <p>Experience a complete car paint makeover at Durian Car Detailing with our polish and ceramic coat service. Our team revamps your vehicle, removing swirls and scratches for a flawless surface. The ceramic coat provides long-lasting protection and enhances shine. Trust us for a head-turning finish!</p>
+                <a href="#contact" class="service-btn">BOOK APPOINTMENT</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <div>
+                <h2>ABOUT DURIAN</h2>
+                <p>Here at Durian, we offer premium, long-lasting shine for your ride! We specialize in deep cleaning, ceramic coatings, and pro-level detailing. Book now for that fresh, showroom look!</p>
+                <p>My name is Cameron DeBough, and I'm based in Tucson, AZ. I've been providing professional detailing services inside and outside since 2023. In this time, I've completed over 100 details and also specialize in ceramic coating, steaming, polishing, clay bar wax, shampooing, stain removal, pet hair removal, and more - you name it!</p>
+                <p><strong>MY EQUIPMENT:</strong></p>
+                <ul class="equipment-list">
+                    <li>Steamer</li>
+                    <li>Extractor</li>
+                    <li>Pressure Washer</li>
+                    <li>Over 50 chemical sprays</li>
+                    <li>200+ Microfiber towels</li>
+                    <li>Water deionizer</li>
+                    <li>High-pressure vacuum</li>
+                </ul>
+                <p style="margin-top: 2rem; font-style: italic;">Your journey with us is more than just a service - it's a partnership in keeping your car in top condition. Let us take care of the details while you focus on enjoying the ride. Join the Durian family and let's make your car shine!</p>
+            </div>
+            <img src="about-image.jpg" alt="Cameron DeBough detailing a car" class="about-image">
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>BEFORE VS AFTER</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="gallery1.jpg" alt="Car detailing before and after">
+                <div class="gallery-label">DODGE DEMON</div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery2.jpg" alt="Interior detailing transformation">
+                <div class="gallery-label">JEEP GRAND CHEROKEE TRACKHAWK</div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery3.jpg" alt="Exterior polish results">
+                <div class="gallery-label">CAMARO ZL1</div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery4.jpg" alt="Ceramic coating application">
+                <div class="gallery-label">TOYOTA CAMRY BACKSEATS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>CONTACT US</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>GET IN TOUCH</h3>
+                <p><strong>Email:</strong> <a href="mailto:cameron.debough@gmail.com">cameron.debough@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:520-861-8697">(520) 861-8697</a></p>
+                <p><strong>Location:</strong> Detailing takes place from my garage at 2471, N Aileen Ave, Tucson AZ</p>
+                <p style="font-style: italic; margin-top: 1rem;">If you cannot make it, we can discuss coming to you!</p>
+                
+                <div class="hours">
+                    <h3>HOURS</h3>
+                    <p><strong>Monday — Friday</strong><br>4PM - 9PM</p>
+                    <p><strong>Saturday — Sunday</strong><br>9AM - 10 PM</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>BOOK YOUR APPOINTMENT</h3>
+                <form action="https://formspree.io/f/xgvpqnze" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In *</label>
+                        <input type="text" id="service" name="service" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                </form>
+                <p style="color: #666; margin-top: 1rem; font-size: 0.9rem;">Or text/call me directly at (520) 861-8697</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Durian Car Detailing. All rights reserved. | Professional Auto Detailing in Tucson, AZ</p>
+    </footer>
+
+    <!-- Scroll Effect for Header -->
+    <script>
+        // Add scrolled class to header when user scrolls
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
