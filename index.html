@@ -10,11 +10,10 @@
     <meta name="geo.region" content="US-AZ">
     <meta name="geo.placename" content="Tucson">
     <meta name="geo.position" content="32.2217;-110.9265">
-    <meta name="google-site-verification" content="D1xo961AK4ty81OiVd73qPcItM8YMjFVhz49BRlnNTY" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://duriancardetailing.vercel.app/">
+    <meta property="og:url" content="https://durian-car-detailing.vercel.app/">
     <meta property="og:title" content="Durian Car Detailing - Professional Car Detailing in Tucson, AZ">
     <meta property="og:description" content="Premium car detailing services in Tucson. Specializing in ceramic coating, interior detailing, and paint correction. Over 100 details completed since 2023.">
     <meta property="og:image" content="hero-background.jpg">
@@ -32,7 +31,7 @@
       "name": "Durian Car Detailing",
       "image": "hero-background.jpg",
       "@id": "",
-      "url": "https://durian-car-detailing.vercel.app/",
+      "url": "https://durian-car-detailing.vercel.app",
       "telephone": "+1-520-861-8697",
       "email": "cameron.debough@gmail.com",
       "priceRange": "$$",
@@ -168,6 +167,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        /* Mobile Hero Background */
+        @media (max-width: 768px) {
+            .hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(139, 127, 244, 0.7)), url('hero-background-mobile.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: scroll; /* Better performance on mobile */
+            }
         }
 
         .hero h1 {
