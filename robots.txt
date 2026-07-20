@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://duriancardetailing.vercel.app/sitemap.xml
+Sitemap: https://duriancardetailing.com/sitemap.xml
