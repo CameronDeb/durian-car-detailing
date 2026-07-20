@@ -76,11 +76,20 @@
       "areaServed": [
         { "@type": "Place", "name": "Tanque Verde, Tucson, AZ" },
         { "@type": "City", "name": "Tucson" },
+        { "@type": "Place", "name": "Sabino Canyon, Tucson, AZ" },
+        { "@type": "Place", "name": "Bear Canyon, Tucson, AZ" },
+        { "@type": "Place", "name": "Ventana Canyon, Tucson, AZ" },
+        { "@type": "Place", "name": "Agua Caliente, Tucson, AZ" },
         { "@type": "Place", "name": "Catalina Foothills, AZ" },
         { "@type": "Place", "name": "East Tucson, AZ" },
+        { "@type": "Place", "name": "Houghton, Tucson, AZ" },
+        { "@type": "Place", "name": "Civano, Tucson, AZ" },
+        { "@type": "Place", "name": "Rita Ranch, Tucson, AZ" },
+        { "@type": "Place", "name": "Casas Adobes, AZ" },
         { "@type": "City", "name": "Oro Valley" },
         { "@type": "City", "name": "Marana" },
         { "@type": "City", "name": "Vail" },
+        { "@type": "Place", "name": "Corona de Tucson, AZ" },
         { "@type": "Place", "name": "Catalina, AZ" }
       ],
       "serviceType": ["Car Detailing", "Mobile Detailing", "Interior Detailing", "Exterior Detailing", "Polish and Ceramic Coating", "Paint Correction"]
@@ -106,7 +115,7 @@
           "name": "What areas of Tucson do you serve?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We're based on Tucson's east side and proudly serve Tanque Verde, the Catalina Foothills, Sabino Canyon area, East Tucson, Midtown, Oro Valley, Marana, Vail, Catalina, and the greater Tucson metro area."
+            "text": "We're based on Tucson's east side and proudly serve Tanque Verde, Sabino Canyon, Bear Canyon, Ventana Canyon, Agua Caliente, the Catalina Foothills, East Tucson, Houghton, Civano, Rita Ranch, Vail, Corona de Tucson, Midtown, Downtown, Casas Adobes, Oro Valley, Marana, Catalina, and the greater Tucson metro area."
           }
         },
         {
@@ -145,8 +154,8 @@
         :root {
             --navy: #0c1420;
             --navy-soft: #131f30;
-            --gold: #e8b13c;
-            --gold-dark: #d09a22;
+            --accent: #a6e22e;
+            --accent-dark: #4d7c0f;
             --text: #2b3442;
             --text-muted: #5b6676;
             --light: #f6f7f9;
@@ -194,7 +203,7 @@
 
         .section-tag {
             display: inline-block;
-            color: var(--gold-dark);
+            color: var(--accent-dark);
             font-weight: 700;
             font-size: 0.85rem;
             letter-spacing: 3px;
@@ -259,7 +268,7 @@
         }
 
         .logo span {
-            color: var(--gold);
+            color: var(--accent);
         }
 
         .nav-links {
@@ -278,7 +287,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--accent);
         }
 
         .btn {
@@ -296,15 +305,15 @@
             transform: translateY(-2px);
         }
 
-        .btn-gold {
-            background: var(--gold);
+        .btn-accent {
+            background: var(--accent);
             color: var(--navy);
             padding: 0.8rem 1.7rem;
-            box-shadow: 0 6px 18px rgba(232, 177, 60, 0.35);
+            box-shadow: 0 6px 18px rgba(166, 226, 46, 0.30);
         }
 
-        .btn-gold:hover {
-            background: var(--gold-dark);
+        .btn-accent:hover {
+            background: var(--accent-dark);
         }
 
         .btn-outline {
@@ -314,8 +323,8 @@
         }
 
         .btn-outline:hover {
-            border-color: var(--gold);
-            color: var(--gold);
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         .nav-cta {
@@ -364,9 +373,9 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(232, 177, 60, 0.15);
-            border: 1px solid rgba(232, 177, 60, 0.45);
-            color: var(--gold);
+            background: rgba(166, 226, 46, 0.12);
+            border: 1px solid rgba(166, 226, 46, 0.5);
+            color: var(--accent);
             font-size: 0.85rem;
             font-weight: 600;
             padding: 0.4rem 1rem;
@@ -382,7 +391,7 @@
         }
 
         .hero h1 span {
-            color: var(--gold);
+            color: var(--accent);
         }
 
         .hero p {
@@ -422,7 +431,7 @@
             font-family: 'Outfit', sans-serif;
             font-size: 1.9rem;
             font-weight: 800;
-            color: var(--gold);
+            color: var(--accent);
         }
 
         .trust-item small {
@@ -485,7 +494,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .service-body .btn-gold {
+        .service-body .btn-accent {
             align-self: flex-start;
             padding: 0.65rem 1.4rem;
             font-size: 0.92rem;
@@ -524,7 +533,7 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: var(--gold-dark);
+            color: var(--accent-dark);
             font-weight: 800;
         }
 
@@ -590,6 +599,59 @@
             text-transform: uppercase;
         }
 
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .review-card {
+            background: var(--light);
+            border: 1px solid #e3e7ee;
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-stars {
+            color: var(--accent-dark);
+            letter-spacing: 3px;
+            margin-bottom: 0.7rem;
+            font-size: 1.05rem;
+        }
+
+        .review-card blockquote {
+            color: var(--text-muted);
+            font-size: 0.97rem;
+            margin: 0 0 1.1rem;
+            flex: 1;
+        }
+
+        .review-name {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.95rem;
+        }
+
+        .review-source {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        .reviews-note {
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .reviews-note strong {
+            color: var(--accent-dark);
+        }
+
         /* Service areas */
         .areas {
             background: var(--light);
@@ -616,7 +678,7 @@
 
         .area-chip.featured {
             background: var(--navy);
-            color: var(--gold);
+            color: var(--accent);
             border-color: var(--navy);
         }
 
@@ -653,7 +715,7 @@
         .faq-item summary::after {
             content: "+";
             font-size: 1.4rem;
-            color: var(--gold-dark);
+            color: var(--accent-dark);
             font-weight: 700;
             flex-shrink: 0;
             transition: transform 0.2s;
@@ -689,7 +751,7 @@
             font-size: 1.3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            color: var(--gold);
+            color: var(--accent);
         }
 
         .contact-info p {
@@ -698,7 +760,7 @@
         }
 
         .contact-info a {
-            color: var(--gold);
+            color: var(--accent);
             text-decoration: none;
             font-weight: 600;
         }
@@ -755,7 +817,7 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--gold);
+            border-color: var(--accent);
         }
 
         .form-group textarea {
@@ -777,7 +839,7 @@
         }
 
         .form-note a {
-            color: var(--gold-dark);
+            color: var(--accent-dark);
             font-weight: 700;
             text-decoration: none;
         }
@@ -872,9 +934,10 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Results</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#areas">Service Areas</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="btn btn-gold nav-cta">Book Now</a></li>
+                <li><a href="#contact" class="btn btn-accent nav-cta">Book Now</a></li>
             </ul>
             <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -890,7 +953,7 @@
                 <h1>Professional Car Detailing <span>in Tucson, Arizona</span></h1>
                 <p>Interior deep cleans, exterior wash &amp; wax, polish and ceramic coating — done right, at your driveway or ours. Over 100 vehicles detailed across Tucson since 2023.</p>
                 <div class="hero-actions">
-                    <a href="#contact" class="btn btn-gold">Get a Free Quote</a>
+                    <a href="#contact" class="btn btn-accent">Get a Free Quote</a>
                     <a href="tel:520-861-8697" class="btn btn-outline">Call (520) 861-8697</a>
                 </div>
             </div>
@@ -902,7 +965,7 @@
         <div class="container">
             <div class="trust-grid">
                 <div class="trust-item"><strong>100+</strong><small>Vehicles Detailed</small></div>
-                <div class="trust-item"><strong>2023</strong><small>Serving Tucson Since</small></div>
+                <div class="trust-item"><strong>★ 5.0</strong><small>Google Rating · 11 Reviews</small></div>
                 <div class="trust-item"><strong>Mobile</strong><small>We Come to You</small></div>
                 <div class="trust-item"><strong>7 Days</strong><small>Open Every Week</small></div>
             </div>
@@ -921,7 +984,7 @@
                     <div class="service-body">
                         <h3>Exterior Detailing</h3>
                         <p>A meticulous hand wash that gets into every crack and crevice, tire &amp; rim shine, and a ceramic wax finish for lasting protection against the Arizona sun and monsoon dust.</p>
-                        <a href="#contact" class="btn btn-gold">Book Exterior</a>
+                        <a href="#contact" class="btn btn-accent">Book Exterior</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -929,7 +992,7 @@
                     <div class="service-body">
                         <h3>Interior Detailing</h3>
                         <p>Full vacuum, carpet shampoo &amp; stain removal, precise steam cleaning, detail brushing for hard-to-reach spots, and specialized pet hair removal. Your cabin, brought back to life.</p>
-                        <a href="#contact" class="btn btn-gold">Book Interior</a>
+                        <a href="#contact" class="btn btn-accent">Book Interior</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -937,7 +1000,7 @@
                     <div class="service-body">
                         <h3>Polish &amp; Ceramic Coating</h3>
                         <p>Machine polishing removes swirls and light scratches for a flawless surface, then a ceramic coating locks in deep gloss and long-lasting protection from Tucson's harsh UV.</p>
-                        <a href="#contact" class="btn btn-gold">Book Polish &amp; Coat</a>
+                        <a href="#contact" class="btn btn-accent">Book Polish &amp; Coat</a>
                     </div>
                 </div>
             </div>
@@ -963,7 +1026,7 @@
                         <li>High-Pressure Vacuum System</li>
                     </ul>
                     <p>Your car is more than transportation — it's an investment. Let me take care of the details while you enjoy the ride. Proudly serving Tanque Verde, Tucson, Oro Valley, Marana, Catalina, and surrounding areas.</p>
-                    <a href="#contact" class="btn btn-gold">Book Your Detail</a>
+                    <a href="#contact" class="btn btn-accent">Book Your Detail</a>
                 </div>
                 <img src="about-image.jpg" alt="Cameron detailing a car in Tucson, Arizona" class="about-image" width="500" height="460" loading="lazy">
             </div>
@@ -997,6 +1060,54 @@
         </div>
     </section>
 
+    <!-- Reviews -->
+    <section id="reviews" class="reviews">
+        <div class="container center">
+            <span class="section-tag">Happy Customers</span>
+            <h2 class="section-title">Rated 5.0 Stars on Google</h2>
+            <p class="section-intro">Every single review — all 11 of them — is five stars. Here's what Tucson drivers are saying.</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <blockquote>"Cameron is the best car detailer I have used! He is thorough, punctual, and trustworthy. My Tahoe is sparkling and I couldn't be happier!"</blockquote>
+                    <div class="review-name">Courtney M.</div>
+                    <div class="review-source">Google Review</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <blockquote>"Cameron did a GREAT job on my 2014 Roush! His attention to detail is greatly appreciated!! I felt as though I was getting into a brand new car!"</blockquote>
+                    <div class="review-name">Elias K.</div>
+                    <div class="review-source">Google Review</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <blockquote>"Cameron and his assistant made my 10+ year old Fiat Pop look like brand new, inside and out. Extremely professional…"</blockquote>
+                    <div class="review-name">K. Turner</div>
+                    <div class="review-source">Google Review</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <blockquote>"He did so good!! I had a lot of pet hair on my seats and that in itself is difficult to get rid of…"</blockquote>
+                    <div class="review-name">Aurea G.</div>
+                    <div class="review-source">Google Review</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <blockquote>"Completely removed stain from my passenger seat and left my car very clean. Extremely professional and for a good price 🙏🙏"</blockquote>
+                    <div class="review-name">Holden C.</div>
+                    <div class="review-source">Google Review</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <blockquote>"Cameron did a great job. He got my very old car looking great and went the extra mile. I highly recommend!"</blockquote>
+                    <div class="review-name">Craig B.</div>
+                    <div class="review-source">Google Review</div>
+                </div>
+            </div>
+            <p class="reviews-note"><strong>★ 5.0</strong> average from 11 reviews on Google — read them all on our Google Business Profile.</p>
+        </div>
+    </section>
+
     <!-- Service Areas -->
     <section id="areas" class="areas">
         <div class="container center">
@@ -1004,17 +1115,24 @@
             <h2 class="section-title">Mobile Detailing Across Tucson</h2>
             <p class="section-intro">Based on Tucson's east side near Tanque Verde, we bring professional detailing straight to your driveway — or arrange a convenient drop-off.</p>
             <div class="area-chips">
-                <span class="area-chip featured">⭐ Tanque Verde</span>
-                <span class="area-chip">Catalina Foothills</span>
+                <span class="area-chip featured">★ Tanque Verde</span>
                 <span class="area-chip">Sabino Canyon</span>
+                <span class="area-chip">Bear Canyon</span>
+                <span class="area-chip">Ventana Canyon</span>
+                <span class="area-chip">Agua Caliente</span>
+                <span class="area-chip">Catalina Foothills</span>
                 <span class="area-chip">East Tucson</span>
+                <span class="area-chip">Houghton</span>
+                <span class="area-chip">Civano</span>
+                <span class="area-chip">Rita Ranch</span>
+                <span class="area-chip">Vail</span>
+                <span class="area-chip">Corona de Tucson</span>
                 <span class="area-chip">Midtown Tucson</span>
                 <span class="area-chip">Downtown Tucson</span>
+                <span class="area-chip">Casas Adobes</span>
                 <span class="area-chip">Oro Valley</span>
                 <span class="area-chip">Marana</span>
-                <span class="area-chip">Vail</span>
                 <span class="area-chip">Catalina</span>
-                <span class="area-chip">Rita Ranch</span>
                 <span class="area-chip">Greater Tucson</span>
             </div>
         </div>
@@ -1032,7 +1150,7 @@
                 </details>
                 <details class="faq-item">
                     <summary>What areas of Tucson do you serve?</summary>
-                    <p>We're based on Tucson's east side and proudly serve Tanque Verde, the Catalina Foothills, the Sabino Canyon area, East Tucson, Midtown, Oro Valley, Marana, Vail, Catalina, and the greater Tucson metro area.</p>
+                    <p>We're based on Tucson's east side and proudly serve Tanque Verde, Sabino Canyon, Bear Canyon, Ventana Canyon, Agua Caliente, the Catalina Foothills, East Tucson, Houghton, Civano, Rita Ranch, Vail, Corona de Tucson, Midtown, Downtown, Casas Adobes, Oro Valley, Marana, Catalina, and the greater Tucson metro area.</p>
                 </details>
                 <details class="faq-item">
                     <summary>How long does a full car detail take?</summary>
@@ -1044,7 +1162,7 @@
                 </details>
                 <details class="faq-item">
                     <summary>How much does car detailing cost in Tucson?</summary>
-                    <p>Pricing depends on your vehicle's size and condition and the services you choose. Call or text <a href="tel:520-861-8697" style="color: var(--gold-dark); font-weight:700; text-decoration:none;">(520) 861-8697</a> or use the booking form below for a fast, free quote — no obligation.</p>
+                    <p>Pricing depends on your vehicle's size and condition and the services you choose. Call or text <a href="tel:520-861-8697" style="color: var(--accent-dark); font-weight:700; text-decoration:none;">(520) 861-8697</a> or use the booking form below for a fast, free quote — no obligation.</p>
                 </details>
             </div>
         </div>
@@ -1054,7 +1172,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="center">
-                <span class="section-tag" style="color: var(--gold);">Get Started</span>
+                <span class="section-tag" style="color: var(--accent);">Get Started</span>
                 <h2 class="section-title">Book Your Detail</h2>
             </div>
             <div class="contact-grid">
@@ -1099,7 +1217,7 @@
                             <label for="message">Vehicle &amp; Message</label>
                             <textarea id="message" name="message" placeholder="e.g. 2019 Toyota RAV4, pet hair in back seats, located near Tanque Verde &amp; Sabino Canyon Rd"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-gold submit-btn">Send Message</button>
+                        <button type="submit" class="btn btn-accent submit-btn">Send Message</button>
                     </form>
                     <p class="form-note">Or text/call directly: <a href="tel:520-861-8697">(520) 861-8697</a></p>
                 </div>
@@ -1110,7 +1228,7 @@
     <!-- Footer -->
     <footer>
         <a href="#" class="logo">DURIAN <span>CAR DETAILING</span></a>
-        <p><a href="https://www.instagram.com/duriancardetailing/" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: none; font-weight: 600;">📸 Follow us on Instagram — @duriancardetailing</a></p>
+        <p><a href="https://www.instagram.com/duriancardetailing/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">📸 Follow us on Instagram — @duriancardetailing</a></p>
         <p>&copy; 2026 Durian Car Detailing. All rights reserved. Professional auto detailing in Tucson, AZ.</p>
         <p>Serving Tanque Verde, Catalina Foothills, East Tucson, Oro Valley, Marana, Vail &amp; the greater Tucson area.</p>
         <p>Car Detailing • Interior Detailing • Exterior Detailing • Polish &amp; Ceramic Coating • Mobile Service</p>
